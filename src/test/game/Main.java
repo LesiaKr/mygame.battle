@@ -6,7 +6,7 @@ package test.game;
 import java.util.Scanner;
 
 public class Main {
-    private static Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         WarriorOne warriorOne = new WarriorOne("Воїн №1", "ніж", 200, 1000);
@@ -32,36 +32,27 @@ public class Main {
 
             if (numWarrior > 3 || numTarget > 3){
                 System.out.println("Такого Воїна не існує. Спробуйте ще раз.");
-            }
-
-            if (numWarrior == 1 && numTarget == 2) {
-                warriorOne.attack(warriorTwo);
-            }
-            if (numWarrior == 1 && numTarget == 3) {
+            } else if (numWarrior == 1 && numTarget == 2){
+                    warriorOne.attack(warriorTwo);
+            } else if (numWarrior == 1 && numTarget == 3) {
                 warriorOne.attack(warriorThree);
-            }
-            if (numWarrior == 1 && numTarget == 1) {
+            } else if (numWarrior == 1 && numTarget == 1) {
                 System.out.println("Це самогубство...Спробуйте ще раз.");
-            }
-            if (numWarrior == 2 && numTarget == 1) {
+            } else if (numWarrior == 2 && numTarget == 1) {
                 warriorTwo.attack(warriorOne);
-            }
-            if (numWarrior == 2 && numTarget == 3) {
+            } else if (numWarrior == 2 && numTarget == 3) {
                 warriorTwo.attack(warriorThree);
-            }
-            if (numWarrior == 2 && numTarget == 2) {
+            } else if (numWarrior == 2 && numTarget == 2) {
                 System.out.println("Це самогубство...Спробуйте ще раз.");
-            }
-            if (numWarrior == 3 && numTarget == 1) {
+            } else if (numWarrior == 3 && numTarget == 1) {
                 warriorThree.attack(warriorOne);
-            }
-            if (numWarrior == 3 && numTarget == 2) {
+            } else if (numWarrior == 3 && numTarget == 2) {
                 warriorThree.attack(warriorTwo);
-            }
-            if (numWarrior == 3 && numTarget == 3) {
+            } else if (numWarrior == 3 && numTarget == 3) {
                 System.out.println("Це самогубство...Спробуйте ще раз.");
+            } else {
+                System.out.println("Спробуйте ще раз.");
             }
-
 
             if (warriorTwo.getHp() <= 0 && warriorThree.getHp() <= 0) {
                 System.out.println(" ");
@@ -81,4 +72,3 @@ public class Main {
         }
     }
 }
-
